@@ -1,0 +1,19 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "user management",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js",
+    "package":"asar pack MyApp-win32-x64/resources/app/app MyApp-win32-x64/resources/app/app.asar",
+    "build": "electron-packager MyApp.app/Con",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vikas kushwaha",
+  "license": "ISC",
+  "devDependencies": {
+    "asar": "^0.13.0",
+    "electron-packager": "^8.5.1",
+    "electron-prebuilt": "^1.5.0"
+  }
+}

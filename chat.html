@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="angular.js">
+            
+        </script>
+        
+        <script src="socket.js">
+        </script>
+        <script src="appAngular.js">
+        
+            
+        </script>
+        <script src="http://localhost:3000/socket.io/socket.io.js">
+            
+        </script>
+        <body ng-app="chat" ng-controller="chat_socket">
+            <nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+   <h3 class="navbar-text">Project Chat</h3>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <h3>Chat Box {{name}}</h3>
+      <div class="caption">
+        
+         <ul>
+                <li ng-repeat="msg in messages track by $index">
+                <p>{{msg.name}}:{{msg.msg}}</p> 
+                </li>
+            </ul>
+            <div ng-show="chat">
+            <input type="text" ng-keyup="typing()" name="chat" ng-model="message">
+            <ul ng-show="msgname" id="menu">
+                <li ng-repeat="names in Name">{{names}} , </li>
+                
+                </ul>  
+            <p ng-show="msgname">is typing......</p>
+            <button type="button" ng-click="sendMessage()" class="btn btn-primary">Send</button>
+            </div>
+            <div ng-hide="chat">
+                <p>Please enter your name to start chat</p>
+                <input type="text" name="name" ng-model="name" value="">
+                <button type="button" name"enter_name" ng-click="chatUser()">Start Chat</button>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <h3>Online User</h3>
+      <div class="caption">
+        <ul>
+        <li ng-repeat="user in users">{{user.name}}</li>    
+        </ul>
+         
+      </div>
+    </div>
+  </div>
+</div>
+           
+           
+           
+                 </body>
+    </head>
+</html>
