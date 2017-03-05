@@ -1,2 +1,2 @@
-# This is simple a desktop chat application.
-# with electron Js.
+# This is a simple desktop chat application.
+# Using electron Js.
